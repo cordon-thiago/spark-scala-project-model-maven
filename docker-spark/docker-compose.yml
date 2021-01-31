@@ -14,7 +14,7 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - ../target:/home/spark-apps/
+      - ../spark-apps:/home/spark-apps/
   spark-worker-1:
     image: bitnami/spark:3.0.1
     container_name: spark_worker_1
@@ -28,7 +28,7 @@ services:
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
     volumes:
-      - ../target:/home/spark-apps/
+      - ../spark-apps:/home/spark-apps/
   spark-worker-2:
     image: bitnami/spark:3.0.1
     container_name: spark_worker_2
@@ -42,4 +42,4 @@ services:
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
     volumes:
-      - ../target:/home/spark-apps/
+      - ../spark-apps:/home/spark-apps/
